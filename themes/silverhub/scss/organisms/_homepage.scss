@@ -1,0 +1,30 @@
+//Styles for the blog entries on the HomePage
+.post-summary {
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(33, 38, 47, 0.09);
+	overflow: auto;
+    
+    .post-image {
+        max-width: 160px;
+        float: left;
+        margin: 0 26px 0 0;
+    }
+    
+    .post-title {
+        margin-bottom: 0;
+        font-weight: bold;
+        font-size: 20px;
+        
+        a {
+            color: #333;
+        }
+    }
+    
+    .blog-post-meta {
+        margin-bottom: 8px;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}

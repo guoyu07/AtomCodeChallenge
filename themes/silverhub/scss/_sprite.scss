@@ -1,0 +1,40 @@
+// Created a sprite sheet for the icons in the nav
+@mixin sprite {
+	background-repeat: no-repeat;
+	background-image: url(../images/sprite.png);
+	background-image: linear-gradient(transparent, transparent), url(../images/sprite.svg);
+}
+
+@mixin icon-style {
+	content: '';
+	display: inline-block;
+	@include sprite;
+	height: 28px;
+	width: 28px;
+	padding: 0;
+}
+
+// Iterate over the sprite sheet
+@mixin footer-icon($name) {
+	.icon[data-icon="#{$name}"]:before {
+		@include icon-style;
+		@include icon($name);
+		transform: scale(.100);
+		vertical-align: middle;
+		margin-top: 15px;
+	}
+}
+
+
+@mixin icon($name) {
+	@if $name == menu { background-position: 0 0; }
+	@if $name == warning { background-position: 0 -44px; }
+	@if $name == search { background-position: 0 -88px; }
+	@if $name == down-arrow { background-position: -44px -88px; }
+	@if $name == linkedin { background-position: -88px -88px; }
+	@if $name == twitter { background-position: -132px -88px; }
+	@if $name == facebook { background-position: -176px -88px; }
+	@if $name == github { background-position: -220px -88px; }
+	@if $name == help { background-position: -264px -88px; }
+	@if $name == vimeo { background-position: -308px -88px; }
+}

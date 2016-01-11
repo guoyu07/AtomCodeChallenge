@@ -1,0 +1,165 @@
+
+.main-content {
+	padding: 0 $gutter;
+}
+
+.breadcrumb {
+	margin-bottom: 0;
+}
+
+.container {
+
+	margin-top: 15px;
+
+	@include span-columns(12 of 12);
+
+	@include media($lg-screen-up) {
+		@include span-columns(9);
+	}
+
+	.content {
+		border-bottom: 1px solid #D8D8D8;
+
+		@include media($md-screen-down) { 
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+
+	&.full-width {
+		@include fill-parent;
+	}
+}
+
+.last-edited-by-at {
+	margin-top: 60px;
+	margin-bottom: 10px;
+	font-style: italic;
+	font-size: 14px;
+}
+
+.container-sidebar {
+	@include direction-context(right-to-left) {
+
+		margin-top: 15px;
+
+		@include span-columns(12 of 12);
+
+		@include media($lg-screen-up) {
+			@include span-columns(3);
+		}
+	}
+}
+
+.feature-box-content {
+ 	min-height: 250px;
+	background-color: $white;
+	border-radius: $base-border-radius;
+	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+ }
+
+@include media($lg-screen-up) {
+
+	.third-nav-content {
+		min-height: 297px;
+		background-color: $white;
+		border-radius: 3px;
+		box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
+		padding: 20px;
+		margin-bottom: 40px;
+
+		h2 {
+			 font-size: 24px;
+	    }
+
+		.parent {
+			display: none;
+		}
+
+		a {
+			color: #0d6cab;
+		}
+
+		ul {
+			list-style-type: none;
+		    padding-top: 0;
+		    padding-right: 5px;
+		    padding-left: 0;
+		}
+	}
+}
+
+.child-nav, .third-nav-bar {
+	display: none;
+
+	@include media($lg-screen-up) {
+        display: block;
+    }
+}
+
+.feature-box { 
+ 	@include background-image(url("../images/feature-box-icon.png"));
+ 	background-repeat: no-repeat;
+ 	background-position: 0 0;
+ 	font-size: $lg-md-font-size;
+ 	padding-left: 35px;
+	line-height: 30px;
+}
+
+.feature-box-image { 
+	border: 1px solid $light-grey;
+	padding: 0 $gutter;
+}
+
+.paginatedlist {
+
+	// @include span-columns(12);
+
+	li {
+	 	z-index: -999;
+		width: 2em;
+	 	height: 2em;
+	 	text-align: center;
+	 	line-height: 2em;
+	 	border-radius: 1em;
+	 	display: inline-block;
+		color: #A9A9A9;
+	 	position: relative;
+	 	font-size: $md-sm-font-size;
+	}
+
+	li::before{
+	  content: '';
+	  top: .9em;
+	  left: -4em;
+	  width: 4em;
+	  height: .2em;
+	  z-index: -1;
+	}
+
+	.active {
+	  background: #03A577;
+
+	  li {
+	  	color: $white;
+	  }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

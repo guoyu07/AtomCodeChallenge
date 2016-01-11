@@ -1,0 +1,29 @@
+@import "../neat/neat-helpers";
+
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter($grid-columns, $gutter); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}
+
+$gutter: 5%;
+$grid-columns: 12;
+$max-width: em(1200);
+
+// Neat Breakpoints
+$sm-screen: 480;
+$md-screen: 768;
+$lg-screen: 940;
+$xl-screen: 1200;
+
+
+$sm-screen-up: new-breakpoint(min-width em($sm-screen));
+$md-screen-up: new-breakpoint(min-width em($md-screen));
+$lg-screen-up: new-breakpoint(min-width em($lg-screen));
+$xl-screen-up: new-breakpoint(max-width em(-1+$xl-screen));
+
+
+$sm-screen-down: new-breakpoint(max-width em(-1+$sm-screen));
+$md-screen-down: new-breakpoint(max-width em(-1+$md-screen));
+$lg-screen-down: new-breakpoint(max-width em(-1+$lg-screen));
+$xl-screen-down: new-breakpoint(max-width em(-1+$xl-screen));
+

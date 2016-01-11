@@ -1,0 +1,28 @@
+
+table {
+  @include font-feature-settings("kern", "liga", "tnum");
+  border-collapse: collapse;
+    @include media($md-screen-up) {
+       width: 100%;
+    }
+}
+
+th {
+  border-bottom: 1px solid darken($base-border-color, 15%);
+  font-weight: 600;
+  text-align: center;
+}
+
+td {
+  border-bottom: $base-border;
+  padding: $small-spacing 0;
+}
+
+tr,
+td,
+th {
+  vertical-align: middle;
+}
+
+
+

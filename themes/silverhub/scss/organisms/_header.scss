@@ -1,0 +1,228 @@
+header {
+    width: 100%;
+    background: $dark-blue;
+    padding: 0 $gutter;
+	margin-bottom: 30px;
+
+    .menu {
+        //Nav
+        @include media($lg-screen-down) {
+            // button on tablet, mobile drop down menu
+            .submenu-button {
+                @include position(absolute, 0 0 null null);
+                z-index: 99;
+                margin-top: 20px;
+                height: 26px;
+                width: 30px;
+                cursor: pointer;
+                &:before {
+                    @include icon-style;
+                    @include icon('down-arrow');
+                    transform: scale(.35);
+                }
+            }
+        }
+
+        .nav-links {
+            padding: 0 0;
+            margin-bottom: 0;
+
+            @include media($lg-screen-up) {
+                @include span-columns(10);
+                @include omega;
+				float: right;
+				width: auto;
+            }
+
+            @include media($lg-screen-down) {
+                width: 100%;
+                background-color: $dark-blue;
+            }
+
+            @include media($lg-screen-up) {
+                > li > ul > li > ul > li {
+                   display: none;
+                }
+            }
+
+            > li {
+                //hover on nav
+                &:hover {
+                    background-color: $med-blue;
+                }
+
+                > a {
+                    font-size: $sml-font-size;
+                    color: $light-grey;
+                    text-transform: uppercase;
+
+                    @include media($lg-screen-down) {
+                        padding-top: 27px;
+                        padding-bottom: 27px;
+                        padding-left: 20px;
+                        border-top: solid #323949 1px;
+                        font-size: $md-sm-font-size;
+                    }
+
+                    > li.has-sub > a:after {
+                        @include position(absolute, 22px null null null);
+                        display: block;
+                        background: $dark-blue;
+                        content:'';
+                    }
+                }
+            }
+
+            ul {
+
+                ul {
+                    top: 0;
+
+                    @include media($lg-screen-up) {
+                        top: 40px;
+                    }
+                }
+            }
+
+            @include media($lg-screen-up) {
+
+                > li {
+                    float: left;
+
+                    > a {
+                        @include media ($lg-screen-up) {
+                            display: inline-block;
+                            padding: 28px 13px;
+                        }
+                    }
+                }
+
+                li:hover > ul {
+                    left: auto;
+
+                    > li {
+                        height: 45px;
+
+                        &:first-child {
+                            border-top: 1px solid #0d6cab;
+                        }
+                    }
+                }
+            }
+
+            .current {
+                color: $blue;
+            }
+
+            ul {
+                @include media($lg-screen-up) {
+                    position: absolute;
+                    left: -9999px;
+                    padding: 0;
+                }
+
+                a {
+                    @include media($lg-screen-up) {
+                        background-color: #005a96;
+                        text-transform: uppercase;
+                        font-size: $sml-font-size;
+                    }
+
+                    @include media($lg-screen-down) {
+                        font-size: $md-sm-font-size;
+                    }
+                        padding: 15px 20px;
+                        width: 213px;
+                        color: $light-grey;
+                }
+
+                li {
+                    @include media($lg-screen-up) {
+                        height: 0;
+                        -webkit-transition: all .25s ease;
+                        -ms-transition: all .25s ease;
+                        background:  #005a96;
+                        transition:all .25s ease;
+                    }
+                }
+            }
+        }
+    }
+
+    .hamburger {
+
+        position: absolute;
+        top: 1em; right: .75em;
+        height: 28px;
+        cursor: pointer;
+
+        &:before {
+            @include icon-style;
+            @include icon('nav');
+        }
+
+        @include media($lg-screen-up) {
+            display: none;
+        }
+    }
+
+    .menu,.menu .nav-links, .menu ul li,.menu ul li a, .menu #head-mobile{
+        @include media($lg-screen-up) {
+            display: block;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        @include media ($lg-screen-down) {
+            line-height: 1;
+            display: block;
+            position: relative;
+        }
+    }
+
+    .logo {
+        display: block;
+        background: url('../images/silverhub-logo.svg') no-repeat;
+        background-size: contain;
+        height: 50px;
+        width: 130px;
+
+        @include media ($lg-screen-up) {
+            float: left;
+        }
+    }
+
+    .menu:after, .menu > ul:after{
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+    }
+
+    .logo-container {
+        @include media ($lg-screen-up) {
+            @include span-columns(2);
+        }
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    @include media($lg-screen-down) {
+        .menu .nav-links ul, .menu .nav-links ul ul{
+            position: relative;
+            left: 0;
+            width: 100%;
+            margin: 0;
+            text-align: left
+        }
+
+        ul {
+            padding: 0 5px;
+        }
+    }
+
+}
+

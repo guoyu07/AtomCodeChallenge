@@ -1,0 +1,7 @@
+---
+Name: mysiteroutes
+After: framework/routes
+---
+Director:
+  rules:
+    'atom/$team': 'StaffHolder_Controller'
